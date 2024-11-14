@@ -9,13 +9,13 @@ class htmlObject:
         self.isVisible = isVisible
         self.inline = inline
         self.text = text
-        children = children
-    def addChild(newchild):
-        children.append(newchild)
+        self.children = children
+    def addChild(self,newchild):
+        self.children.append(newchild)
     
 
 
-class htmlImageObject:
+class htmlImageObject(htmlAObject):
     url = ""
     def __init__(self,elementname = "img",isVisible = True,inline = True,alttext = "imgAltText",url = "www.example.com"):
             super().__init__(self,elementname,isVisible,inline,alttext,None)
@@ -24,7 +24,7 @@ class htmlImageObject:
 
 
 
-class htmlAObject:
+class htmlAObject(htmlAObject):
     url = ""
     def __init__(self,elementname = "a",isVisible = True,inline = True,text = "linkText",url = "www.example.com",children=[]):
             super().__init__(self,elementname,isVisible,inline,alttext,children)
