@@ -1,4 +1,4 @@
-import json
+import json, htmlnode
 links = []
 
 
@@ -24,8 +24,8 @@ def recurisvePrinter(content):
     else:
         if type(content) == type(dict()):
             if "content" in content:
-                #print(content["type"])
-                #print(type(content["content"]) , content["content"])
+                print(content["type"])
+                print(type(content["content"]) , content["content"])
                 if type(content["content"]) == type([]) :
                     for y in content["content"]:
                         recurisvePrinter(y)
