@@ -1,31 +1,22 @@
 class htmlObject:
-    elementname = ""
-    isVisible = True
-    inline = False
     text = ""
-    children = []
-    def __init__(self,elementname,isVisible,inline,text,children):
-        self.elementname = elementname
-        self.isVisible = isVisible
-        self.inline = inline
+    def __init__(self,text):
         self.text = text
-        self.children = children
-    def addChild(self,newchild):
-        self.children.append(newchild)
-    
+    def __str__(self):
+        return self.text
 
 
-class htmlImageObject(htmlAObject):
+class htmlImageObject(htmlObject):
     url = ""
-    def __init__(self,elementname = "img",isVisible = True,inline = True,alttext = "imgAltText",url = "www.example.com"):
-            super().__init__(self,elementname,isVisible,inline,alttext,None)
+    def __init__(self,alttext = "imgAltText",url = "www.example.com"):
+            super().__init__(alttext)
             self.url = url
-            ##(self,isVisible,inline,children = Null)
 
 
 
-class htmlAObject(htmlAObject):
+class htmlAObject(htmlObject):
     url = ""
-    def __init__(self,elementname = "a",isVisible = True,inline = True,text = "linkText",url = "www.example.com",children=[]):
-            super().__init__(self,elementname,isVisible,inline,alttext,children)
+    def __init__(self,text = "linkText",url = "www.example.com"):
+        def __init__(self,alttext = "imgAltText",url = "www.example.com"):
+            super().__init__(text)
             self.url = url
