@@ -17,6 +17,5 @@ class htmlImageObject(htmlObject):
 class htmlAObject(htmlObject):
     url = ""
     def __init__(self,text = "linkText",url = "www.example.com"):
-        def __init__(self,alttext = "imgAltText",url = "www.example.com"):
             super().__init__(text)
             self.url = url

@@ -1,41 +1,15 @@
 import json
 from htmlnode import *  
-links = []
 
 
     
 file = open("../node/test.json","r").read()
 #print(type(file))
 
-#json to dict
 
+#json to dict
 jsonDict = json.loads(file)
 #print(jsonDict)
-
-##arrays for styling(?)
-
-#recursive loop for json
-def recurisvePrinter(content):
-    #content = content[0]
-    #print(type(content) , content)
-
-    if type(content) == type("") :
-        print(content)
-        return
-    else:
-        if type(content) == type(dict()):
-            if "content" in content:
-                #print(content["type"])
-                #print(type(content["content"]) , content["content"])
-                if type(content["content"]) == type([]) :
-                    for y in content["content"]:
-                        recurisvePrinter(y)
-                else:
-                    return
-
-        else:
-            return
-
 
 def arrayifierLinkAndImageDealer(element):
 
@@ -45,11 +19,24 @@ def arrayifierLinkAndImageDealer(element):
     if element["type"] == "a":
         if "attributes" in element:
             if "href" in element["attributes"]:
-                htmlArray.append(htmlAObject(url= element["attributes"]["href"]))
+                htmlArray.append(htmlAObject(url= element["attributes"]["href"],text= element["content"][0]))##'text' to be recursive allowing for images
             else:
                 print("improper Link")
         else:
             print("improper Link")
+
+
+def anchorTagObjectifier(anchor):
+    htmlAObject(url= element["attributes"]["href"],text= element["content"][0])
+    ##for each content make new AObject
+    ##just text
+    ##just image
+    ##text and image
+    ##some other tag(s)
+
+    ##for each child
+    ##arrayifierLinkAndImageDealer(childhref)
+
 
 htmlArray = []
 def arrayifier(content):
@@ -62,7 +49,7 @@ def arrayifier(content):
             ##add if for forms
             if (content["type"] == "img") or (content["type"] == "a"):
                 arrayifierLinkAndImageDealer(content)
-            if "content" in content:
+            elif "content" in content:
                 #print(content["type"])
                 #print(type(content["content"]) , content["content"])
                 if type(content["content"]) == type([]) :
@@ -73,20 +60,24 @@ def arrayifier(content):
         else:
             return
 
-
+#ignored assumed html tag
+#loop through "1st child" tags (head, body, foot, etc)
 for x in jsonDict["content"]:
     #print(x)
     arrayifier(x)
 
 
-#ignored assumed html tag
-#loop through "root" tags (head, body, foot, etc)
+
 
 x = 0
+print(len(htmlArray))
+print(htmlArray)
 while x < len(htmlArray):
-    print(htmlArray[x],end = "")
-    input("")
-    x = x + 1
+    inputval = input(htmlArray[x])
+    if inputval == "":
+        x = x + 1
+    
+    
 
 
 
