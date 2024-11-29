@@ -11,19 +11,6 @@ file = open("../node/test.json","r").read()
 jsonDict = json.loads(file)
 #print(jsonDict)
 
-def arrayifierLinkAndImageDealer(element):
-
-    if element["type"] == "img":
-        
-        htmlArray.append(htmlImageObject(url= element["attributes"]["src"]))
-    if element["type"] == "a":
-        if "attributes" in element:
-            if "href" in element["attributes"]:
-                htmlArray.append(htmlAObject(url= element["attributes"]["href"],text= element["content"][0]))##'text' to be recursive allowing for images
-            else:
-                print("improper Link")
-        else:
-            print("improper Link")
 
 
 def anchorTagObjectifier(anchor):
@@ -47,9 +34,19 @@ def arrayifier(content):
     else:
         if type(content) == type(dict()):
             ##add if for forms
-            if (content["type"] == "img") or (content["type"] == "a"):
-                arrayifierLinkAndImageDealer(content)
-            elif "content" in content:
+            ##used to be its own def
+            if content["type"] == "img":
+                htmlArray.append(htmlImageObject(url= content["attributes"]["src"]))
+            elif content["type"] == "a":
+                if "attributes" in content:
+                    if "href" in content["attributes"]:
+                        htmlArray.append(htmlAObject(url= content["attributes"]["href"],text= content["content"][0]))##'text' to be recursive allowing for images
+                    else:
+                        print("improper Link")
+                else:
+                    print("improper Link")
+
+            elif "content" in content: ###no images and anchors should reach here
                 #print(content["type"])
                 #print(type(content["content"]) , content["content"])
                 if type(content["content"]) == type([]) :
