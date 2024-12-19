@@ -37,10 +37,13 @@ html = html.replace(/(\r\n|\n|\r|\t)/gm, "");
 
 
 
-//remove (single tag elements, non unicode chararcters, comments)
+//remove (some single tag elements, non unicode chararcters, comments)
 html = html.replace(/<!(?!-?>)(?!.*--!>)(?!.*<!--(?!>)).*?(?<!<!-)>/gm, "");
 //console.log(html);
-html = html.replace(/(&ndash;|&copy;|<br>|<hr>)/gm, "");
+html = html.replace(/(<br>|<hr>)/gm, "");
+//html = html.replace(/(<html.*>)/gm, "<html>");
+//html = html.replace(/(<script.*script>)/gm, "");
+html = html.replace(/(<c-wiz.*c-wiz>)/gm, "");
 //console.log(html);
 
 
