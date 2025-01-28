@@ -33,12 +33,14 @@ def linkButton(button):
     openLink(URL)
 def openLink(url):
     print(url)
+    time.sleep(5) 
     searcher.search(url)
     time.sleep(5) 
     file = open("../node/test.json","r").read()
     #print(type(file))    
     #json to dict
-    jsonDict = json.loads(file)    
+    jsonDict = json.loads(file)
+
     display(jsonDict)
 
 
@@ -53,9 +55,11 @@ def urwider(json):
         if type(json[0]) == urwid.Text("None"):
             print("urwidobj")
     elif type(json) == type(dict()):##JS Object (anything but plain text)
-        if json["type"] == "a":
-                if "attributes" in json:
-                    if "href" in json["attributes"]:
+        if json["type"].lower() == "a":
+                if "attributes"  in json:
+                    if ("HREF" in json["attributes"]):
+                        json["attributes"]["href"] = json["attributes"]["HREF"]
+                    if ("href" in json["attributes"]):
                         ##deal with link
                         ##get link text
                         links = []
@@ -97,7 +101,7 @@ def urwider(json):
 def display(jsonDict):
     print(jsonDict)
     urwidUI = urwid.ScrollBar(urwid.Scrollable(urwid.Filler(urwider(jsonDict)[0])))
-    print(jsonDict)
     loop = urwid.MainLoop(urwidUI)
+    loop.screen.clear()
     loop.run()
 

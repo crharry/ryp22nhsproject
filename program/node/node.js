@@ -16,36 +16,34 @@ if (argv.length > 2){
 
 
 
-//htmlformatting sync function
-const waitforhtmlformatting = new Promise((resolve, reject) => {
-  resolve(html);
-});
+
 function removewhitespacefromstart(html) {
   if(!html) return html;
-  return html.replace(/^\s+|\s+$/gm, '');
-}
+  
 
+  //https://www.textfixer.com/tutorials/javascript-line-breaks.php
+  html = html.replace(/(\r\n|\n|\r|\t)/gm, "");
+  //console.log(html);
+  //remove (some single tag elements, non unicode chararcters, comments)
+  html = html.replace(/<!(?!-?>)(?!.*--!>)(?!.*<!--(?!>)).*?(?<!<!-)>/gm, "");
+  //console.log(html);
+  html = html.replace(/(<br>|<hr>)/gm, "");
+  //html = html.replace(/(<html.*>)/gm, "<html>");
+  //html = html.replace(/(<script.*script>)/gm, "");
+  html = html.replace(/(<c-wiz.*c-wiz>)/gm, "");
+  //console.log(html);
+  return html.replace(/^\s+|\s+$/gm, "");
+
+}
 
 
 
 html = removewhitespacefromstart(html);
 
-//https://www.textfixer.com/tutorials/javascript-line-breaks.php
-html = html.replace(/(\r\n|\n|\r|\t)/gm, "");
-//console.log(html);
-
-
-
-
-//remove (some single tag elements, non unicode chararcters, comments)
-html = html.replace(/<!(?!-?>)(?!.*--!>)(?!.*<!--(?!>)).*?(?<!<!-)>/gm, "");
-//console.log(html);
-html = html.replace(/(<br>|<hr>)/gm, "");
-//html = html.replace(/(<html.*>)/gm, "<html>");
-//html = html.replace(/(<script.*script>)/gm, "");
-html = html.replace(/(<c-wiz.*c-wiz>)/gm, "");
-//console.log(html);
-
+//htmlformatting sync function
+const waitforhtmlformatting = new Promise((resolve, reject) => {
+  resolve(html);
+});
 
 //HTML to JSon
 
@@ -54,12 +52,13 @@ html = html.replace(/(<c-wiz.*c-wiz>)/gm, "");
 
 waitforhtmlformatting.then((html) => {
   //console.log(html);
+  const element = html; // HTML string
+  //console.log(element);
+  result = HTMLToJSON(element,true); // Default: false - true: return JSON, false: return JS Object
+  waitforjson();
 });
 
 
-const element = html; // HTML string
-//console.log(element);
-let result = HTMLToJSON(element,true); // Default: false - true: return JSON, false: return JS Object
 
 
 //output
@@ -71,5 +70,5 @@ async function waitforjson(){
     console.log(result);
 }
 
-waitforjson();
+
 //console.log(result);

@@ -17,7 +17,9 @@ def search(url):
         
     if os.name == "nt":
         #search
-        os.system('curl ' + url + ' -o ../node/index.html')
+        print('curl ' + url + ' -o ../node/index.html')
+        os.system('curl ' + ' -o ../node/index.html ' + url)
+        time.sleep(2) 
         #update current json
         os.system('node ../node/node.js ../node/index.html > ../node/test.json')
         os.system('python front2.py')
