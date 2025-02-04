@@ -1,6 +1,6 @@
 from front2 import *
 import sys
-
+###for front2.py
 print ('argument list', sys.argv)
 
 opened = True

@@ -1,8 +1,8 @@
 import time
 import os
 import sys
-print ('argument list', sys.argv)
-print (os.name)
+#print ('argument list', sys.argv)
+#print (os.name)
 
 
 def search(url):
