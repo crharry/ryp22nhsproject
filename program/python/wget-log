@@ -1,15 +1,0 @@
---2024-12-12 14:27:04--  https://news.google.com/home?hl=en-GB
-Resolving news.google.com (news.google.com)... 142.250.180.14, 2a00:1450:4009:81e::200e
-Connecting to news.google.com (news.google.com)|142.250.180.14|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://news.google.com/home?hl=en-GB&gl=GB&ceid=GB:en [following]
---2024-12-12 14:27:05--  https://news.google.com/home?hl=en-GB&gl=GB&ceid=GB:en
-Reusing existing connection to news.google.com:443.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [text/html]
-Saving to: ‘../node/index.html’
-
-../node/index.html                                              [<=>                                                                                                                                       ]       0  --.-KB/s               ../node/index.html                                              [ <=>                                                                                                                                      ] 767.82K  3.74MB/s               ../node/index.html                                              [  <=>                                                                                                                                     ]   1.61M  4.08MB/s    in 0.4s    
-
-2024-12-12 14:27:05 (4.08 MB/s) - ‘../node/index.html’ saved [1687313]
-

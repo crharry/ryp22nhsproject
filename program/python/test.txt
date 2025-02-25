@@ -1,0 +1,559 @@
+open tag!
+modified open tag =  !doctype
+parentTag tags:  [None]
+open tag!
+modified open tag =  html
+parentTag tags:  ['!doctype']
+open tag!
+modified open tag =  head
+parentTag tags:  ['!doctype', 'html']
+open tag!
+modified open tag =  meta
+VOID meta
+open tag!
+modified open tag =  meta
+VOID meta
+open tag!
+modified open tag =  title
+parentTag tags:  ['!doctype', 'html', 'head']
+close tag!
+/title ['!doctype', 'html', 'head', 'title']
+tag Successfully closed##########
+271
+
+open tag!
+modified open tag =  script
+/script ('/script', 4083)
+remove:  script  @   272 to  4083
+open tag!
+modified open tag =  style
+/style ('/style', 4564)
+remove:  style  @   4083 to  4564
+open tag!
+modified open tag =  style
+/style ('/style', 5625)
+remove:  style  @   4564 to  5625
+open tag!
+modified open tag =  script
+/script ('/script', 7293)
+remove:  script  @   5625 to  7293
+close tag!
+/head ['!doctype', 'html', 'head']
+tag Successfully closed##########
+7299
+
+open tag!
+modified open tag =  body
+parentTag tags:  ['!doctype', 'html']
+open tag!
+modified open tag =  script
+/script ('/script', 7619)
+remove:  script  @   7321 to  7619
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body']
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'div']
+open tag!
+modified open tag =  nobr
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div']
+open tag!
+modified open tag =  b
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/b ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'b']
+tag Successfully closed##########
+7675
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+7748
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+7820
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+7887
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+7951
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+8012
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+8079
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+8142
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+open tag!
+modified open tag =  u
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+close tag!
+/u ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a', 'u']
+tag Successfully closed##########
+8258
+
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+8270
+
+close tag!
+/nobr ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+tag Successfully closed##########
+8277
+
+close tag!
+/div ['!doctype', 'html', 'body', 'div', 'div']
+tag Successfully closed##########
+8283
+
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'div']
+open tag!
+modified open tag =  nobr
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div']
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/span ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'span']
+tag Successfully closed##########
+8344
+
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/span ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'span']
+tag Successfully closed##########
+8374
+
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/span ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'span']
+tag Successfully closed##########
+8394
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+8474
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+8529
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+close tag!
+/a ['!doctype', 'html', 'body', 'div', 'div', 'nobr', 'a']
+tag Successfully closed##########
+8686
+
+close tag!
+/nobr ['!doctype', 'html', 'body', 'div', 'div', 'nobr']
+tag Successfully closed##########
+8693
+
+close tag!
+/div ['!doctype', 'html', 'body', 'div', 'div']
+tag Successfully closed##########
+8699
+
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'div']
+close tag!
+/div ['!doctype', 'html', 'body', 'div', 'div']
+tag Successfully closed##########
+8733
+
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'div']
+close tag!
+/div ['!doctype', 'html', 'body', 'div', 'div']
+tag Successfully closed##########
+8768
+
+close tag!
+/div ['!doctype', 'html', 'body', 'div']
+tag Successfully closed##########
+8774
+
+open tag!
+modified open tag =  center
+parentTag tags:  ['!doctype', 'html', 'body']
+open tag!
+modified open tag =  br
+VOID br
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'center']
+open tag!
+modified open tag =  img
+VOID img
+open tag!
+modified open tag =  br
+VOID br
+open tag!
+modified open tag =  br
+VOID br
+close tag!
+/div ['!doctype', 'html', 'body', 'center', 'div']
+tag Successfully closed##########
+9005
+
+open tag!
+modified open tag =  form
+parentTag tags:  ['!doctype', 'html', 'body', 'center']
+open tag!
+modified open tag =  table
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form']
+open tag!
+modified open tag =  tr
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table']
+open tag!
+modified open tag =  td
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr']
+close tag!
+/td ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td']
+tag Successfully closed##########
+9120
+
+open tag!
+modified open tag =  td
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr']
+open tag!
+modified open tag =  input
+VOID input
+open tag!
+modified open tag =  input
+VOID input
+open tag!
+modified open tag =  input
+VOID input
+open tag!
+modified open tag =  input
+VOID input
+open tag!
+modified open tag =  input
+VOID input
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td']
+open tag!
+modified open tag =  input
+VOID input
+close tag!
+/div ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'div']
+tag Successfully closed##########
+9583
+
+open tag!
+modified open tag =  br
+VOID br
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td']
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'span']
+open tag!
+modified open tag =  input
+VOID input
+close tag!
+/span ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'span', 'span']
+tag Successfully closed##########
+9719
+
+close tag!
+/span ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'span']
+tag Successfully closed##########
+9726
+
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td']
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'span']
+open tag!
+modified open tag =  input
+VOID input
+open tag!
+modified open tag =  script
+/script ('/script', 10154)
+remove:  script  @   9871 to  10154
+open tag!
+modified open tag =  input
+VOID input
+close tag!
+/span ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'span', 'span']
+tag Successfully closed##########
+10248
+
+close tag!
+/span ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'span']
+tag Successfully closed##########
+10255
+
+close tag!
+/td ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td']
+tag Successfully closed##########
+10260
+
+open tag!
+modified open tag =  td
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr']
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td']
+close tag!
+/a ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td', 'a']
+tag Successfully closed##########
+10385
+
+close tag!
+/td ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr', 'td']
+tag Successfully closed##########
+10390
+
+close tag!
+/tr ['!doctype', 'html', 'body', 'center', 'form', 'table', 'tr']
+tag Successfully closed##########
+10395
+
+close tag!
+/table ['!doctype', 'html', 'body', 'center', 'form', 'table']
+tag Successfully closed##########
+10403
+
+open tag!
+modified open tag =  input
+VOID input
+open tag!
+modified open tag =  script
+/script ('/script', 10989)
+remove:  script  @   10455 to  10989
+close tag!
+/form ['!doctype', 'html', 'body', 'center', 'form']
+tag Successfully closed##########
+10995
+
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'center']
+open tag!
+modified open tag =  br
+VOID br
+close tag!
+/div ['!doctype', 'html', 'body', 'center', 'div']
+tag Successfully closed##########
+11049
+
+open tag!
+modified open tag =  span
+parentTag tags:  ['!doctype', 'html', 'body', 'center']
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span']
+open tag!
+modified open tag =  div
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span', 'div']
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div']
+close tag!
+/a ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div', 'a']
+tag Successfully closed##########
+11194
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div']
+close tag!
+/a ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div', 'a']
+tag Successfully closed##########
+11237
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div']
+close tag!
+/a ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div', 'a']
+tag Successfully closed##########
+11283
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div']
+close tag!
+/a ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div', 'a']
+tag Successfully closed##########
+11439
+
+close tag!
+/div ['!doctype', 'html', 'body', 'center', 'span', 'div', 'div']
+tag Successfully closed##########
+11445
+
+close tag!
+/div ['!doctype', 'html', 'body', 'center', 'span', 'div']
+tag Successfully closed##########
+11451
+
+open tag!
+modified open tag =  p
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span']
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span', 'p']
+close tag!
+/a ['!doctype', 'html', 'body', 'center', 'span', 'p', 'a']
+tag Successfully closed##########
+11552
+
+open tag!
+modified open tag =  a
+parentTag tags:  ['!doctype', 'html', 'body', 'center', 'span', 'p']
+close tag!
+/a ['!doctype', 'html', 'body', 'center', 'span', 'p', 'a']
+tag Successfully closed##########
+11599
+
+close tag!
+/p ['!doctype', 'html', 'body', 'center', 'span', 'p']
+tag Successfully closed##########
+11603
+
+close tag!
+/span ['!doctype', 'html', 'body', 'center', 'span']
+tag Successfully closed##########
+11610
+
+close tag!
+/center ['!doctype', 'html', 'body', 'center']
+tag Successfully closed##########
+11619
+
+open tag!
+modified open tag =  script
+/script ('/script', 12138)
+remove:  script  @   11620 to  12138
+open tag!
+modified open tag =  script
+/script ('/script', 12922)
+remove:  script  @   12141 to  12922
+open tag!
+modified open tag =  script
+/script ('/script', 18643)
+remove:  script  @   12922 to  18643
+open tag!
+modified open tag =  u
+parentTag tags:  ['!doctype', 'html', 'body']
+close tag!
+/b ['!doctype', 'html', 'body', 'u']
+NOT CLOSED##############################################################
+close tag is not in parent and not direct, therefore random close b
+close tag!
+/p ['!doctype', 'html', 'body', 'u']
+NOT CLOSED##############################################################
+close tag is not in parent and not direct, therefore random close p
+close tag!
+/body ['!doctype', 'html', 'body', 'u']
+NOT CLOSED##############################################################
+close tag is in parent but not direct, likely close in child, treat as 'trailing' body
+></ht
+u /body
+u
+[] <class 'list'>
+tags to add:  ['</u>', 18655] ['<u>', 18662]
+close tag!
+/html ['!doctype', 'html', 'u']
+NOT CLOSED##############################################################
+close tag is in parent but not direct, likely close in child, treat as 'trailing' html
+>
+u /html
+u
+[['</u>', 18655], ['<u>', 18662]] <class 'list'>
+tags to add:  ['</u>', 18662] ['<u>', 18669]
+None
+None
+None
+None
+None
+[[272, 4083], [4083, 4564], [4564, 5625], [5625, 7293], [7321, 7619], [9871, 10154], [10455, 10989], [11620, 12138], [12141, 12922], [12922, 18643], [18646, 18650], [18650, 18654]]
+[['</u>', 18655], ['<u>', 18662], ['</u>', 18662], ['<u>', 18669]]
+original len:  18668
+<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="en-GB"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title></head><body bgcolor="#fff"><div id="mngb"><div id=gbar><nobr><b class=gb1>Search</b> <a class=gb1 href="https://www.google.com/imghp?hl=en&tab=wi">Images</a> <a class=gb1 href="http://maps.google.co.uk/maps?hl=en&tab=wl">Maps</a> <a class=gb1 href="https://play.google.com/?hl=en&tab=w8">Play</a> <a class=gb1 href="https://www.youtube.com/?tab=w1">YouTube</a> <a class=gb1 href="https://news.google.com/?tab=wn">News</a> <a class=gb1 href="https://mail.google.com/mail/?tab=wm">Gmail</a> <a class=gb1 href="https://drive.google.com/?tab=wo">Drive</a> <a class=gb1 style="text-decoration:none" href="https://www.google.co.uk/intl/en/about/products?tab=wh"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a href="http://www.google.co.uk/history/optout?hl=en" class=gb4>Web History</a> | <a  href="/preferences?hl=en" class=gb4>Settings</a> | <a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=http://www.google.com/&ec=GAZAAQ" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div></div><center><br clear="all" id="lgpd"><div id="XjhHGf"><img alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272" id="hplogo"><br><br></div><form action="/search" name="f"><table cellpadding="0" cellspacing="0"><tr valign="top"><td width="25%">&nbsp;</td><td align="center" nowrap=""><input name="ie" value="ISO-8859-1" type="hidden"><input value="en-GB" name="hl" type="hidden"><input name="source" type="hidden" value="hp"><input name="biw" type="hidden"><input name="bih" type="hidden"><div class="ds" style="height:32px;margin:4px 0"><input class="lst" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000" autocomplete="off" value="" title="Google Search" maxlength="2048" name="q" size="57"></div><br style="line-height:0"><span class="ds"><span class="lsbb"><input class="lsb" value="Google Search" name="btnG" type="submit"></span></span><span class="ds"><span class="lsbb"><input class="lsb" id="tsuid_gw-iZ4CcA-WkkdUPrc_2mQU_1" value="I'm Feeling Lucky" name="btnI" type="submit"><input value="ACkRmUkAAAAAZ6IdkwK6UUTEd2d270ve6uuVc8sGDv9B" name="iflsig" type="hidden"></span></span></td><td class="fl sblc" align="left" nowrap="" width="25%"><a href="/advanced_search?hl=en-GB&amp;authuser=0">Advanced search</a></td></tr></table><input id="gbv" name="gbv" type="hidden" value="1"></form><div style="font-size:83%;min-height:3.5em"><br></div><span id="footer"><div style="font-size:10pt"><div style="margin:19px auto;text-align:center" id="WqQANb"><a href="/intl/en/ads/">Advertising</a><a href="/services/">Business Solutions</a><a href="/intl/en/about.html">About Google</a><a href="http://www.google.com/setprefdomain?prefdom=GB&amp;prev=http://www.google.co.uk/&amp;sig=67a36103K_0jxuuYLn75e-hkkjdWfEDDTTYVo%3D">Google.co.uk</a></div></div><p style="font-size:8pt;color:#70757a">&copy; 2025 - <a href="/intl/en/policies/privacy/">Privacy</a> - <a href="/intl/en/policies/terms/">Terms</a></p></span></center>   <u></body></html>
+new len:  3504
+Fixing tags
+removed section
+removed section
+removed section
+removed section
+removed section
+removed section
+removed section
+removed section
+removed section
+removed section
+removed section
+removed section
+[[272, 4083], [4083, 4564], [4564, 5625], [5625, 7293], [7321, 7619], [9871, 10154], [10455, 10989], [11620, 12138], [12141, 12922], [12922, 18643], [18646, 18650], [18650, 18654]]
+[['</u>', 18655], ['<u>', 18662], ['</u>', 18662], ['<u>', 18669]]
+new len:  3518
+<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="en-GB"><head><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title></head><body bgcolor="#fff"><div id="mngb"><div id=gbar><nobr><b class=gb1>Search</b> <a class=gb1 href="https://www.google.com/imghp?hl=en&tab=wi">Images</a> <a class=gb1 href="http://maps.google.co.uk/maps?hl=en&tab=wl">Maps</a> <a class=gb1 href="https://play.google.com/?hl=en&tab=w8">Play</a> <a class=gb1 href="https://www.youtube.com/?tab=w1">YouTube</a> <a class=gb1 href="https://news.google.com/?tab=wn">News</a> <a class=gb1 href="https://mail.google.com/mail/?tab=wm">Gmail</a> <a class=gb1 href="https://drive.google.com/?tab=wo">Drive</a> <a class=gb1 style="text-decoration:none" href="https://www.google.co.uk/intl/en/about/products?tab=wh"><u>More</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a href="http://www.google.co.uk/history/optout?hl=en" class=gb4>Web History</a> | <a  href="/preferences?hl=en" class=gb4>Settings</a> | <a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=http://www.google.com/&ec=GAZAAQ" class=gb4>Sign in</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div></div><center><br clear="all" id="lgpd"><div id="XjhHGf"><img alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272" id="hplogo"><br><br></div><form action="/search" name="f"><table cellpadding="0" cellspacing="0"><tr valign="top"><td width="25%">&nbsp;</td><td align="center" nowrap=""><input name="ie" value="ISO-8859-1" type="hidden"><input value="en-GB" name="hl" type="hidden"><input name="source" type="hidden" value="hp"><input name="biw" type="hidden"><input name="bih" type="hidden"><div class="ds" style="height:32px;margin:4px 0"><input class="lst" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000" autocomplete="off" value="" title="Google Search" maxlength="2048" name="q" size="57"></div><br style="line-height:0"><span class="ds"><span class="lsbb"><input class="lsb" value="Google Search" name="btnG" type="submit"></span></span><span class="ds"><span class="lsbb"><input class="lsb" id="tsuid_gw-iZ4CcA-WkkdUPrc_2mQU_1" value="I'm Feeling Lucky" name="btnI" type="submit"><input value="ACkRmUkAAAAAZ6IdkwK6UUTEd2d270ve6uuVc8sGDv9B" name="iflsig" type="hidden"></span></span></td><td class="fl sblc" align="left" nowrap="" width="25%"><a href="/advanced_search?hl=en-GB&amp;authuser=0">Advanced search</a></td></tr></table><input id="gbv" name="gbv" type="hidden" value="1"></form><div style="font-size:83%;min-height:3.5em"><br></div><span id="footer"><div style="font-size:10pt"><div style="margin:19px auto;text-align:center" id="WqQANb"><a href="/intl/en/ads/">Advertising</a><a href="/services/">Business Solutions</a><a href="/intl/en/about.html">About Google</a><a href="http://www.google.com/setprefdomain?prefdom=GB&amp;prev=http://www.google.co.uk/&amp;sig=67a36103K_0jxuuYLn75e-hkkjdWfEDDTTYVo%3D">Google.co.uk</a></div></div><p style="font-size:8pt;color:#70757a">&copy; 2025 - <a href="/intl/en/policies/privacy/">Privacy</a> - <a href="/intl/en/policies/terms/">Terms</a></p></span></center>   <u></body></html><u></u><u></u>
