@@ -160,7 +160,7 @@ def linkClicked(*args, **kwargs):
     print("url = ",args[1])
     request = requests.get(URL)
     print(request.text)
-    text = (request.text)
+    text = htmlFixerMain(request.text)
     urwidFormattedPage = urwider(text,0)[0]
     print(text)
     print(urwidFormattedPage)
