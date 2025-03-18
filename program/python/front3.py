@@ -1,6 +1,5 @@
 import urwid
 import searcher
-import time
 import re
 
 

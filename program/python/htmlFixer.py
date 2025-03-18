@@ -1,7 +1,7 @@
 ##########################
 #To_Do____________________
 #Deal with EOF cases (never closing tags)
-#Deal with tags closing in child
+#Deal with tags closing in child //see above
 #
 
 
@@ -142,8 +142,8 @@ def findCloseTag(text, cursor,openTag):##USED FOR REMOVING TAGS
     #print(text[cursor-1])
     return cursor-1
 
-file = open("../node/index.html","r").read()
-print(htmlFixer(file,startlocation = 0))
+#file = open("../node/index.html","r").read()
+#print(htmlFixer(file,startlocation = 0))
 
 print(removeBetweenPointers)
 print(insertTagAt)
@@ -162,26 +162,28 @@ def removeFixTags(text,removeBetweenPointers,insertTagAt):
 
     newcursor = len(text)
     x = len(removeBetweenPointers) - 1
-    y =len(insertTagAt) - 1
-    while oldCursor > 0 :
-        #print(oldtext[oldCursor-1])
-        print(newcursor,oldCursor)
-        if oldCursor == insertTagAt[y][1]:
-            print("inserted section", insertTagAt[y][1])
-            insertTagAt[y][1] = newcursor
-            newcursor = newcursor + 1
-            oldCursor = oldCursor + 1
-            y = y - 1
-        if removeBetweenPointers[x][1] >= oldCursor and (x >= 0):
-            print("cursor skip :", oldCursor , oldCursor - (removeBetweenPointers[x][1] - removeBetweenPointers[x][0]-1),  removeBetweenPointers[x], "next insert at:", insertTagAt[y][1])
-            oldCursor = oldCursor - (removeBetweenPointers[x][1] - removeBetweenPointers[x][0])
-            oldCursor = oldCursor + 1
-            print("removed section")
-            x = x - 1
+    y = len(insertTagAt) - 1
+    if y > 0:
+        while oldCursor > 0 :
+            #print(oldtext[oldCursor-1])
+            print(newcursor,oldCursor,y)
+
+            if oldCursor == insertTagAt[y][1]:
+                print("inserted section", insertTagAt[y][1])
+                insertTagAt[y][1] = newcursor
+                newcursor = newcursor + 1
+                oldCursor = oldCursor + 1
+                y = y - 1
+            if removeBetweenPointers[x][1] >= oldCursor and (x >= 0):
+                print("cursor skip :", oldCursor , oldCursor - (removeBetweenPointers[x][1] - removeBetweenPointers[x][0]-1),  removeBetweenPointers[x], "next insert at:", insertTagAt[y][1])
+                oldCursor = oldCursor - (removeBetweenPointers[x][1] - removeBetweenPointers[x][0])
+                oldCursor = oldCursor + 1
+                print("removed section")
+                x = x - 1
 
 
-        newcursor = newcursor - 1
-        oldCursor = oldCursor - 1
+            newcursor = newcursor - 1
+            oldCursor = oldCursor - 1
     print(removeBetweenPointers)
 
 
@@ -193,6 +195,16 @@ def removeFixTags(text,removeBetweenPointers,insertTagAt):
         counter = counter - 1
     print("new len: " , len(text))
     print(text)
+    removeBetweenPointers.clear()
+    insertTagAt.clear()
+    return text
 
-removeFixTags(file,removeBetweenPointers,insertTagAt)
+#removeFixTags(file,removeBetweenPointers,insertTagAt)
+
+def htmlFixerMain(file):
+    htmlFixer(file,startlocation = 0)##to find errors
+    fixed = removeFixTags(file,removeBetweenPointers,insertTagAt)#to correct errors
+
+    return fixed
+
 
