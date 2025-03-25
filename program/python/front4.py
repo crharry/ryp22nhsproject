@@ -1,9 +1,9 @@
 import urwid, requests
 from htmlFixer import htmlFixerMain
-from specialElements import BoxButton,a
+from specialElements import BoxButton,a,inputTag
 voidElements = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr',"!doctype"]
-specialElements = ['a']#tags not treated as text
-specialObjects = [a("placeholder",[urwid.Text("placeholder")])]
+specialElements = ['a',"input"]#tags not treated as text
+specialObjects = [a("placeholder",[urwid.Text("placeholder")]),inputTag()]
 
 
 
@@ -62,7 +62,7 @@ def urwider(text, startlocation = 0):
                 if tagShort[0] in specialElements:
                     returned = SpecialTag(tagShort,tag,cursor,text)
                     cursor = returned[1]
-                    urwidArray.append(returned[0][0])
+                    urwidArray.append(returned[0])
 
 
                 elif tagShort[0] in voidElements:
@@ -125,7 +125,10 @@ def SpecialTag(tagShort,tag,cursor,text):
                 childpile.append(x)
             newObj = elementType(url = "url",children=childpile)
             #newObj = aDemo(url = "url",children=childpile)
-
+    else:
+        ##voidtag
+        newObj = elementType()
+        cursor = cursor - 1
     ##newObj.get();##urwid pile containing children
     if specialObjects[index].hasListener:
         print("adding listener to ",newObj)
@@ -146,6 +149,7 @@ def SpecialTag(tagShort,tag,cursor,text):
         newObj.pileChildren()
         if specialObjects[index].hasListener:
             urwid.connect_signal(newObj.get()[1],"click", linkClicked,href)
+        return newObj.get()[0],cursor
     
     return newObj.get(),cursor
     ##return urwid object , cursor
@@ -189,7 +193,7 @@ loop = urwid.MainLoop(urwid.Filler(urwid.Text("loading...")))
 
 
 
-urwidFormattedPage = urwider('<html><meta><p>paragraph<b>bold</b>after bold</p><a href="https://www.google.com">this is a link</a>hello</html>hi',0)[0]
+urwidFormattedPage = urwider('<html><meta><p>paragraph<b>bold</b>after bold</p><a href="https://www.google.com">this is a link</a>hello<input type="text"></html>hi',0)[0]
 loop = urwid.MainLoop(urwidFormattedPage)
 loop.run()
 linkClicked([None,"https://www.google.com"],[None])

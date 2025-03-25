@@ -42,3 +42,11 @@ class a():
     def get(self):
         return self.pile,self.children[-1]
 
+class inputTag():
+    canHaveChildren = False
+    hasListener = False
+    pile = None
+    def __init__(self):
+        pile = None
+    def get(self):
+        return((urwid.LineBox(urwid.Edit())))
