@@ -8,9 +8,13 @@ specialObjects = [a("placeholder",[urwid.Text("placeholder")]),inputTag()]
 
 
 
+currenturl = ""
+
+
+
 ## inputs  : output text from htmlfixer, pointer to begining of tags children
 ## outputs : array of urwid elements (pile,text,'link')
-def urwider(text, startlocation = 0):
+def urwider(text, startlocation = 0,currenturl=""):
     print("urwider")
     # find tag
     # from start(or prevtag) put into text element
@@ -60,7 +64,7 @@ def urwider(text, startlocation = 0):
                 tagShort = tag.split(" ",1)
                 print(tagShort)
                 if tagShort[0] in specialElements:
-                    returned = SpecialTag(tagShort,tag,cursor,text)
+                    returned = SpecialTag(tagShort,tag,cursor,text,currenturl)
                     cursor = returned[1]
                     urwidArray.append(returned[0])
 
@@ -68,7 +72,7 @@ def urwider(text, startlocation = 0):
                 elif tagShort[0] in voidElements:
                     cursor -=1
                 else:
-                    returned = DefaultOpenTag(text,cursor)##[urwidarray,cursor]
+                    returned = DefaultOpenTag(text,cursor,currenturl)##[urwidarray,cursor]
                     if returned[0] == None:##handle no children
                         cursor = returned[1]
                     else:
@@ -86,9 +90,9 @@ def urwider(text, startlocation = 0):
     return(urwid.Filler(urwid.Pile(urwidArray))),len(text)-1
 
 
-def DefaultOpenTag(text,cursor):
+def DefaultOpenTag(text,cursor,currenturl):
     print("this is a standard tag, treated as plain Text, however it may be within a more *special* tag")
-    returned = urwider(text,cursor)##[urwidarray,cursor]
+    returned = urwider(text,cursor,currenturl)##[urwidarray,cursor]
     urwidArray = returned[0]
     cursor = returned[1]
     if urwidArray == None:
@@ -104,7 +108,7 @@ def DefaultOpenTag(text,cursor):
         
     #return urwider(text,cursor)##[urwidarray,cursor]
 
-def SpecialTag(tagShort,tag,cursor,text):
+def SpecialTag(tagShort,tag,cursor,text,currenturl):
     print("this is a special" , tagShort[0], "tag")
     ##check tag type,
     index = specialElements.index(tagShort[0])
@@ -117,7 +121,7 @@ def SpecialTag(tagShort,tag,cursor,text):
     ## populate with children (call urwid, depending on type)
     if specialObjects[index].canHaveChildren:
         childpile = []
-        returned = urwider(text,cursor)
+        returned = urwider(text,cursor,currenturl)
         print(returned[0])
         cursor = returned[1]
         if len(returned[0]) > 0:
@@ -142,6 +146,10 @@ def SpecialTag(tagShort,tag,cursor,text):
             newcursor += 1 
         href = href.strip('"').strip("'")
         print(href)
+        if href[0] == '/':
+            #print("######################################################################################################")
+            href = currenturl + href
+            print(href)
         newObj.setUrl(href)
         
     
@@ -162,11 +170,13 @@ def linkClicked(*args, **kwargs):
     #print(*args, **kwargs)
     URL = args[1]
     print("url = ",args[1])
+    currenturl = URL
     request = requests.get(URL)
     print(request.text)
     text = htmlFixerMain(request.text)
-    urwidFormattedPage = urwider(text,0)[0]
+    urwidFormattedPage = urwider(text,0,currenturl)[0]
     print(text)
+    
     print(urwidFormattedPage)
     loop.widget = urwid.ScrollBar(urwid.Scrollable((urwidFormattedPage)))
     loop.draw_screen()
@@ -193,7 +203,7 @@ loop = urwid.MainLoop(urwid.Filler(urwid.Text("loading...")))
 
 
 
-urwidFormattedPage = urwider('<html><meta><p>paragraph<b>bold</b>after bold</p><a href="https://www.google.com">this is a link</a>hello<input type="text"></html>hi',0)[0]
+urwidFormattedPage = urwider('<html><meta><p>paragraph<b>bold</b>after bold</p><a href="https://www.google.com">this is a link</a>hello<input type="text"></html>hi',0,currenturl)[0]
 loop = urwid.MainLoop(urwidFormattedPage)
 loop.run()
 linkClicked([None,"https://www.google.com"],[None])
