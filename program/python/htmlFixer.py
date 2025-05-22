@@ -5,18 +5,19 @@
 #
 
 
+import urwid, requests
 
 
 
 
-voidElements = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr']
+voidElements = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr',"!doctype","!--"]
 removeBetween = ['script','style']
 removeBetweenPointers = []
 insertTagAt = []
 ##recursive
 #in:  plain text / html + start of scope pointer
 #out: pointer to end of scope in file (to not read same part twice)
-def htmlFixer (text, startlocation = 0,parentTag=[None]):
+def htmlFixer (text, startlocation = 0,parentTag=[]):
     global insertTagAt
     ##parse starting from startlocation
     cursor = startlocation
@@ -97,10 +98,8 @@ def htmlFixer (text, startlocation = 0,parentTag=[None]):
                 else:
                     ##call htmlFixer()
                     print("parentTag tags: ",parentTag)
-                    if parentTag[0] == None:
-                        parentTag[0] = tag
-                    else:
-                        parentTag.append(tag)
+                    parentTag.append(tag) ## add to stack
+
                     returned = htmlFixer(text,cursor,parentTag)
                     #print("END RECURSIVE")
                     print(returned,"returned")
@@ -123,7 +122,7 @@ def htmlFixer (text, startlocation = 0,parentTag=[None]):
             insertTagAt = [[closeTagsToAppend,len(text)+1]]
         else:
             insertTagAt.append([closeTagsToAppend,len(text)+1])
-        
+        return None
 
 
 
@@ -223,9 +222,10 @@ def htmlFixerMain(file):
     return fixed
 
 #import requests
-#URL = "https://www.google.com"
+#URL = "https://seanconnery.com/"
 #request = requests.get(URL)
-#print(request.headers)
+#print(request.headers)#
 #print(request.text)
-print(htmlFixerMain("""<a <b>HelloWorld</b></a>"""))
-input()
+#input()
+#htmlFixerMain(request.text)
+#input()

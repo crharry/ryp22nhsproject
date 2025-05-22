@@ -203,7 +203,7 @@ loop = urwid.MainLoop(urwid.Filler(urwid.Text("loading...")))
 
 
 
-urwidFormattedPage = urwider('<html><meta><p>paragraph<b>bold</b>after bold</p><a href="https://www.google.com">this is a link</a>hello<input type="text"></html>hi',0,currenturl)[0]
+urwidFormattedPage = urwider('<html><meta><p>paragraph<b>bold</b>after bold</p><a href="https://www.google.com">this is a link</a><a href="https://www.w3.org/Talks/General/Concepts.html">wiki</a>hello<input type="text"></html>hi',0,currenturl)[0]
 loop = urwid.MainLoop(urwidFormattedPage)
 loop.run()
 linkClicked([None,"https://www.google.com"],[None])
